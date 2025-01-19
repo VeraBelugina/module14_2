@@ -30,7 +30,7 @@ users = cursor.fetchall()
 for i in users:
     print(f'Имя: {i[1]} | Почта: {i[2]} | Возраст: {i[3]} | Баланс: {i[4]}')
 
-cursor.execute('DELETE FROM Users WHERE id = 6')
+cursor.execute('DELETE FROM Users WHERE id = ?', (6,))
 
 cursor.execute('SELECT COUNT (*) FROM Users')
 total = cursor.fetchone()[0]
